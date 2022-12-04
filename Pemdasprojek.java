@@ -1,21 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package pemdasprojek;
-
+package ProjectAkhir;
 import java.util.Scanner;
 
 /**
  *
- * @author Azura
+ * @author Bagaskara
  */
-public class Pemdasprojek {
-
-    /**
-     * @param args the command line arguments
-     */
+public class Project {
     public static void main(String[] args) {
         Scanner masukan = new Scanner(System.in);
         Scanner masukan1 = new Scanner(System.in);
@@ -55,7 +45,8 @@ public class Pemdasprojek {
                             }
                         } else {
                             System.out.println("Stock habis");
-                        }   break;
+                        }
+                        break;
                     case 2:
                         motorMatic = stockMotorMatic(motorMatic, pinjamMotorMatic);
                         if (motorMatic != 0) {
@@ -73,7 +64,8 @@ public class Pemdasprojek {
                             }
                         } else {
                             System.out.println("Stock habis");
-                        }   break;
+                        }
+                        break;
                     case 3:
                         motorSport = stockMotorSport(motorSport, pinjamMotorSport);
                         if (motorSport != 0) {
@@ -91,8 +83,10 @@ public class Pemdasprojek {
                             }
                         } else {
                             System.out.println("Stock habis");
-                        }   break;
+                        }
+                        break;
                     default:
+                        System.out.println("Pilihan tidak tersedia, silahkan masukan pilihan yang tersedia");
                         break;
                 }
             } else if (pilihan == 2) {
@@ -115,7 +109,8 @@ public class Pemdasprojek {
                             }
                         } else {
                             System.out.println("Stock habis");
-                        }   break;
+                        }
+                        break;
                     case 2:
                         SUV = stockSUV(SUV, pinjamSUV);
                         if (SUV != 0) {
@@ -133,7 +128,8 @@ public class Pemdasprojek {
                             }
                         } else {
                             System.out.println("Stock habis");
-                        }   break;
+                        }
+                        break;
                     case 3:
                         sedan = stockSedan(sedan, pinjamSedan);
                         if (sedan != 0) {
@@ -151,8 +147,10 @@ public class Pemdasprojek {
                             }
                         } else {
                             System.out.println("Stock Habis");
-                        }   break;
+                        }
+                        break;
                     default:
+                        System.out.println("Pilihan tidak tersedia, silahkan masukan pilihan yang tersedia");
                         break;
                 }
             } else if (pilihan == 3) {
@@ -175,7 +173,7 @@ public class Pemdasprojek {
             motor -= pinjam;
         } else if (motor < pinjam) {
             motor = motor;
-        } else if (motor == 0){
+        } else if (motor == 0) {
             motor = 0;
         }
         return motor;
@@ -186,7 +184,7 @@ public class Pemdasprojek {
             motor -= pinjam;
         } else if (motor < pinjam) {
             motor = motor;
-        } else if (motor == 0){
+        } else if (motor == 0) {
             motor = 0;
         }
         return motor;
@@ -197,7 +195,7 @@ public class Pemdasprojek {
             motor -= pinjam;
         } else if (motor < pinjam) {
             motor = motor;
-        } else if (motor == 0){
+        } else if (motor == 0) {
             motor = 0;
         }
         return motor;
@@ -247,7 +245,7 @@ public class Pemdasprojek {
     }
 
     public static int hitungHargaMotorSport(int jumlahMotor, int jumlahHariMotor) {
-        int harga = (jumlahMotor * jumlahHariMotor * 60000);
+        int harga = (jumlahMotor * jumlahHariMotor * 150000);
         return harga;
     }
 
@@ -281,5 +279,4 @@ public class Pemdasprojek {
         int pilihan = masukan.nextInt();
         return pilihan;
     }
-
 }
