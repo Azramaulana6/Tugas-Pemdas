@@ -9,6 +9,7 @@ public class Project {
     public static void main(String[] args) {
         Scanner masukan = new Scanner(System.in);
         Scanner masukan1 = new Scanner(System.in);
+        Scanner masukan2 = new Scanner (System.in);
         int motorBebek = 5, motorMatic = 4, motorSport = 2;
         int miniBus = 2, SUV = 4, sedan = 5;
         int hariMotorBebek, hariMotorMatic, hariMotorSport, hargaMotorBebek, hargaMotorMatic, hargaMotorSport;
@@ -26,7 +27,8 @@ public class Project {
             System.out.print("Pilih Menu : ");
             int pilihan = masukan.nextInt();
             if (pilihan == 1) {
-                pilihan = jenisMotor();
+                jenisMotor();
+                pilihan = masukan.nextInt();
                 switch (pilihan) {
                     case 1:
                         motorBebek = stockMotorBebek(motorBebek, pinjamMotorBebek);
@@ -90,7 +92,8 @@ public class Project {
                         break;
                 }
             } else if (pilihan == 2) {
-                pilihan = jenisMobil();
+                jenisMobil();
+                pilihan = masukan1.nextInt();
                 switch (pilihan) {
                     case 1:
                         miniBus = stockMiniBus(miniBus, pinjamMiniBus);
@@ -161,7 +164,7 @@ public class Project {
             }
             System.out.println("Apakah anda ingin kembali ke menu utama?(Y/N)");
             System.out.print("Masukan pilihan : ");
-            pilihan1 = masukan1.nextLine();
+            pilihan1 = masukan2.nextLine();
         } while (pilihan1.equalsIgnoreCase("y"));
         int hargaMotor = hitungHargaMotorBebek(jumlahMotorBebek, jumlahHariMotorBebek) + hitungHargaMotorMatic(jumlahMotorMatic, jumlahHariMotorMatic) + hitungHargaMotorSport(jumlahMotorSport, jumlahHariMotorSport);
         int hargaMobil = hitungHargaMiniBus(jumlahMiniBus, jumlahHariMiniBus) + hitungHargaSUV(jumlahSUV, jumlahHariSUV) + hitungHargaSedan(jumlahSedan, jumlahHariSedan);
@@ -264,19 +267,13 @@ public class Project {
         return harga;
     }
 
-    public static int jenisMotor() {
-        Scanner masukan = new Scanner(System.in);
+    public static void jenisMotor() {
         System.out.println("1. Motor Bebek (Rp.60.000/hari)\n2. Motor Matic (Rp.70.000/hari)\n3. Motor Sport(Rp.150.000/hari)");
         System.out.print("Masukan pilihan : ");
-        int pilihan = masukan.nextInt();
-        return pilihan;
     }
 
-    public static int jenisMobil() {
-        Scanner masukan = new Scanner(System.in);
+    public static void jenisMobil() {
         System.out.println("1. Mini Bus (Rp.800.000/hari)\n2. SUV (Rp.500.000/hari)\n3. Sedan (Rp.300.000/hari)");
         System.out.print("Masukan pilihan : ");
-        int pilihan = masukan.nextInt();
-        return pilihan;
     }
 }
